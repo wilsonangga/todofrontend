@@ -44,7 +44,10 @@ export default {
         });
     },
     addUser() {
-      let addItem = { username: this.username, password: this.password };
+      let addItem = {
+        username: this.username,
+        password: this.password,
+      };
       const username = localStorage.getItem("usr");
       const password = localStorage.getItem("pwd");
       console.log(addItem);
@@ -53,7 +56,7 @@ export default {
           headers: { username, password },
         })
         .then(() => {
-          this.users.push(addItem);
+          this.getUsers();
         });
     },
     deleteUser(id) {

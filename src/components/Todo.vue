@@ -19,7 +19,6 @@ export default {
   data() {
     return {
       todos: [],
-      task: "",
     };
   },
   mounted: function () {
@@ -47,6 +46,7 @@ export default {
         })
         .then(() => {
           this.todos.push(addItem);
+          this.getTodos();
         });
     },
     deleteTodo(id) {
